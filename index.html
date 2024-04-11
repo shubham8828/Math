@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Project</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>2D Graph and Functions</h1>
+    </header>
+    <div class="main">
+        <div class="button">
+            <button id="Scatter" onclick="Scatter()">Scatter Plot</button>
+
+            <button id="Line" onclick="opepLine()">Line Chart</button>
+
+            <button id="Bar" onclick="openBarChart()">Bar Chart</button>
+            <button id="Calculate" onclick="Calculate()">Calculate X</button>
+            <button id="Graph" onclick="Graph()">Graph</button>
+
+        </div>
+        <script>
+            function Scatter() {
+                const windowWidth = 500;
+                const windowHeight = 650;
+                const left = 800;
+                const top = 20;
+                window.open('ScatterPlot.html', '_blank', `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            }
+            function opepLine() {
+                const windowWidth = 500;
+                const windowHeight = 650;
+                const left = 800;
+                const top = 20;
+                window.open('LineChart.html', '_blank', `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            }
+            function openBarChart() {
+                const windowWidth = 500;
+                const windowHeight = 650;
+                const left = 800;
+                const top = 20;
+                window.open('BarChart.html', '_blank', `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            }
+            function Calculate() {
+                const windowWidth = 500;
+                const windowHeight = 650;
+                const left = 800;
+                const top = 20;
+                window.open('function.html', '_blank', `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            }
+            function Graph() {
+                const windowWidth = 500;
+                const windowHeight = 650;
+                const left = 800;
+                const top = 20;
+                window.open('Graph/graph.html', '_blank', `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            }
+
+        </script>
+        <div class="chart" id="chart" style="background: white; margin: 10px 20px;">
+            <div class="about">
+                <h3>Scatter Plot </h3>
+                <p>It's a type of data visualization that uses Cartesian coordinates to display values for
+                    two variables for a set of data. The data is displayed as a collection of points, each
+                    representing the value of one variable corresponding to the value of the other variable.
+
+                    In a scatter plot, the horizontal axis (x-axis) represents one variable, and the vertical
+                    axis (y-axis) represents the other variable. Each data point in the plot is represented by
+                    a point where the x-coordinate is the value of the first variable and the y-coordinate is
+                    the value of the second variable.
+                </p>
+            </div>
+            <div class="about">
+                <h3>Line Chart</h3>
+                <p>A line chart is a type of data visualization that displays information as a series of
+                    data points called "markers" connected by straight line segments. It is particularly 
+                    useful for showing trends or changes over time. In a line chart, the horizontal axis 
+                    typically represents time or categories, and the vertical axis represents the value of 
+                    the data being plotted.
+
+
+                    Line charts are popular in business, finance, and scientific research for their 
+                    ability to clearly show trends and patterns in data. They are easy to understand and
+                    interpret, making them a valuable tool for data analysis and decision-making.
+                </p>
+            </div >
+            <div class="about">
+                <h3>Bar Chart </h3>
+                <p>A bar chart is a type of data visualization that uses rectangular bars to represent 
+                    data. The length or height of each bar corresponds to the value it represents. 
+                    Bar charts are commonly used to compare the values of different categories or to 
+                    show changes in data over time.
+
+                    Bar charts are widely used in business, finance, economics, and many other fields 
+                    for their simplicity and effectiveness in visually representing data comparisons and
+                    trends.
+                </p>
+            </div>
+            
+            <div class="about">
+                <h3> Coefficients</h3>
+                <p>
+                    In mathematics, functions can be dynamically generated using coefficients. One 
+                    approach is to use a function factory, which is a higher-order function that returns
+                    a new function based on the coefficients provided. For example, a polynomial function <br>
+                    f(x)=a <sub>n</sub> x <sup>n</sup> + a <sub>n-1</sub>x <sup>n-1</sup>+.....+a <sub>1</sub>x+a <sub>0</sub>
+                    can be created using the coefficients .
+                     
+                    The function factory takes these coefficients as a <sub>n</sub>,a <sub>n-1</sub> a <sub>1</sub>, a <sub>0</sub>
+                    arguments and returns a new function that computes the value of the polynomial for a given 
+                    value of x.
+
+                </p>
+            </div>
+            <div class="about">
+                <h3>Graph </h3>
+                <p>
+                    To graph a function, you typically plot points on a coordinate plane. Each point 
+                    represents an input-output pair for the function. For example, if you have a 
+                    function y=f(x) , you would choose a range of x values, calculate the corresponding 
+                    y values using the function, and then plot the points (x,y) on the graph.
+
+                    graphing a function involves calculating y values for a range of x values and 
+                    plotting those points on a coordinate plane to visualize the relationship between 
+                    the input and output of the function.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="team">
+        <h1>My Team </h1>
+        <div class="cardContainer">
+            <div class="teamMember">
+                <img src="user.jpeg">
+                <h3>Shubham Vishwakarma</h3>
+                <p style="font-size: 15px;">
+                    Class: SYIT B <br>
+                    Roll No.: 114 <br>
+                    Student ID : 3892908
+                </p>
+            </div>
+            <div class="teamMember">
+                <img src="user.jpeg">
+                <h3>Bharat Prasad</h3>
+                <p style="font-size: 15px;">
+                    Class: SYIT B <br>
+                    Roll No.: 124 <br>
+                    Student ID : 4049346
+                </p>
+            </div>
+            <div class="teamMember">
+                <img src="user.jpeg">
+                <h3>Suraj Prajapati</h3>
+                <p style="font-size: 15px;">
+                    Class: SYIT B <br>
+                    Roll No.: 105 <br>
+                    Student ID : 3991365
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

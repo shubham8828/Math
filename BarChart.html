@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bar Chart</title>
+    <style>
+        .chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 80%;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .bar {
+            background-color: #007bff;
+            flex-grow: 1;
+            margin: 0 2px;
+            transition: height 0.5s;
+        }
+
+        .label {
+            text-align: center;
+            margin-top: 5px;
+        }
+        label ,input{
+            margin-left: 20%;
+            margin-top: 20px;
+            width: 60%;
+            text-align: center;
+            height: 40px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        button{
+         margin-left: 38%;   
+         margin-top: 20px;
+         border-radius: 15px;
+         background: #007bff;
+         color: white;
+         font-size: 15px;
+         font-weight: 600;
+         padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart" id="chart"></div>
+    <p id="value"></p>
+    <label for="dataInput">Enter data points (comma-separated):</label><br>
+        <input type="text" id="dataInput"><br>
+        <button onclick="updateChart()">Update Chart</button>
+    <script>
+        const chartContainer = document.getElementById('chart');
+        function updateChart(){
+        const dataInput = document.getElementById('dataInput').value;
+        const dataPoints = dataInput.split(',').map(Number);
+
+        chartContainer.innerHTML = ''; // Clear previous chart
+
+
+        dataPoints.forEach(value => {
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            bar.style.height = `${value * 5}px`; 
+            chartContainer.appendChild(bar);
+
+            const label = document.createElement('div');
+            label.className = 'label';
+            label.textContent = value;
+            label.style.marginBottom=`${value*5+5}px`;
+            chartContainer.appendChild(label);
+        });
+    }
+    </script>
+</body>
+</html>

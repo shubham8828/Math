@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line Chart</title>
+    <style>
+        .chart {
+            width: 80%;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: relative;
+        }
+        .line {
+            fill: none;
+            stroke: #007bff;
+            stroke-width: 2;
+        }
+
+        .point {
+            fill: #007bff;
+            stroke: #fff;
+            stroke-width: 2;
+        }
+
+        .label {
+            font-size: 12px;
+            text-anchor: middle;
+        }
+        label ,input{
+            margin-left: 20%;
+            margin-top: 20px;
+            width: 60%;
+            text-align: center;
+            height: 40px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        
+        button{
+         margin-left: 38%;   
+         margin-top: 20px;
+         border-radius: 15px;
+         background: #007bff;
+         color: white;
+         font-size: 15px;
+         font-weight: 600;
+         padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart" id="chart"></div>
+    <div>
+        <label for="dataInput">Enter data points (comma-separated):</label>
+        <input type="text" id="dataInput">
+        <button onclick="updateChart()">Update Chart</button>
+    </div>
+
+    <script>
+        const chartContainer = document.getElementById('chart');
+
+        function updateChart() {
+            const dataInput = document.getElementById('dataInput').value;
+            const dataPoints = dataInput.split(',').map(Number);
+
+            chartContainer.innerHTML = ''; // Clear previous chart
+
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute('class', 'chart');
+            svg.setAttribute('viewBox', '0 0 400 300');
+
+            // X-axis
+            svg.innerHTML += '<line x1="50" y1="250" x2="350" y2="250" stroke="#ccc" />';
+            // Y-axis
+            svg.innerHTML += '<line x1="50" y1="50" x2="50" y2="250" stroke="#ccc" />';
+
+            // Data points and lines
+            for (let i = 0; i < dataPoints.length; i++) {
+                const x = 50 + (i * 50);
+                const y = 250 - (dataPoints[i] * 2.5);
+                svg.innerHTML += `<circle class="point" cx="${x}" cy="${y}" r="3" />`;
+
+                if (i < dataPoints.length - 1) {
+                    const x1 = x;
+                    const y1 = y;
+                    const x2 = x + 50;
+                    const y2 = 250 - (dataPoints[i + 1] * 2.5);
+                    svg.innerHTML += `<line class="line" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" />`;
+                }
+            }
+
+            // Labels
+            for (let i = 0; i < dataPoints.length; i++) {
+                const x = 50 + (i * 50);
+                const y = 270;
+                svg.innerHTML += `<text x="${x}" y="${y}" class="label">${i}</text>`;
+            }
+            
+            chartContainer.appendChild(svg);
+        }
+    </script>
+</body>
+</html>

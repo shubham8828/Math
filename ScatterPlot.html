@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scatter Plot Example</title>
+    <style>
+        .chart {
+            width: 80%;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: relative;
+        }
+
+        .point {
+            fill: #007bff;
+            stroke: #fff;
+            stroke-width: 2;
+        }
+
+        .label {
+            font-size: 12px;
+            text-anchor: middle;
+        }
+        label ,input{
+            margin-left: 20%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 60%;
+            text-align: center;
+            height: 40px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        button{
+         margin-left: 38%;   
+         margin-top: 20px;
+         border-radius: 15px;
+         background: #007bff;
+         color: white;
+         font-size: 15px;
+         font-weight: 600;
+         padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="chart" id="chart"></div>
+    <div>
+        <label for="dataInputX">Enter X values (comma-separated):</label><br>
+        <input type="text" id="dataInputX"><br>
+        <label for="dataInputY">Enter Y values (comma-separated):</label><br>
+        <input type="text" id="dataInputY"><br>
+        <button onclick="updateChart()">Update Chart</button><br>
+    </div>
+
+    <script>
+        const chartContainer = document.getElementById('chart');
+
+        function updateChart() {
+            const dataInputX = document.getElementById('dataInputX').value;
+            const dataInputY = document.getElementById('dataInputY').value;
+            const dataPointsX = dataInputX.split(',').map(Number);
+            const dataPointsY = dataInputY.split(',').map(Number);
+
+            chartContainer.innerHTML = ''; // Clear previous chart
+
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute('class', 'chart');
+            svg.setAttribute('viewBox', '0 0 400 300');
+
+            // X-axis
+            svg.innerHTML += '<line x1="50" y1="250" x2="350" y2="250" stroke="#ccc" />';
+            // Y-axis
+            svg.innerHTML += '<line x1="50" y1="50" x2="50" y2="250" stroke="#ccc" />';
+
+            // Data points
+            for (let i = 0; i < dataPointsX.length; i++) {
+                const x = 50 + (dataPointsX[i] * 3);
+                const y = 250 - (dataPointsY[i] * 3);
+                svg.innerHTML += `<circle class="point" cx="${x}" cy="${y}" r="3" />`;
+            }
+
+            chartContainer.appendChild(svg);
+        }
+    </script>
+</body>
+</html>

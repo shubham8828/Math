@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background: linear-gradient(50deg,rgba(255, 0, 0, 0.498),rgba(0, 0, 255, 0.493) ,rgba(0, 128, 0, 0.498));
+    padding-bottom: 30px;
+}
+header{
+    background: #ffffffc9;
+    padding: 10px;
+}
+h1{
+    text-align: center;
+    color: black;
+}
+main{
+    height: 100vh;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+
+}
+.button{
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+    width: 25%;
+    padding: 20px 20px;
+}
+.button button{
+    width: 130px;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.447);
+    color: white;
+
+    font-weight: 600;
+    margin: 1% 25%;
+
+}
+#lineChart{
+    height: 200px;
+}
+.chart {
+    width: 80%;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 80vh;
+    position: relative;
+    overflow-y: scroll;
+}
+
+
+.about h3{
+     text-align: center;
+     font-size: 25px;
+     margin: 15px;
+}
+
+.about p{
+    width: 90%;
+    margin-left: 5%;
+    font-size: 18px;
+}
+.team{
+    height: auto;
+    background: #ffffffc9;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    width: auto;
+    margin:0 2.5%;  
+    border: 2px solid black;
+    padding: 2% 5%;
+  }
+  .team h1{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: 600;
+
+  }
+  .cardContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    flex-shrink: 0;
+    align-items: center;
+    justify-content:space-between;
+    column-gap: 40px;
+    width: auto;
+    margin:auto;
+
+  }
+  .teamMember{
+    height:300px;
+    width: 230px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    box-shadow: 0px -1px 10px 3px #070707;
+  }
+  .teamMember p,h3{
+
+    text-align: center;
+  
+  }
+  .teamMember img{
+    border-radius:50% ;
+    height: 100px;
+    width: 100px;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+
+  @media only screen and (max-width:600px) {
+    h1{ 
+        font-size: 22px;
+
+    }
+    .main{
+        flex-direction: column-reverse;
+        margin-left: 10px;
+        
+    }
+    .button button{
+        width: 250px;
+        margin-top: 10px;
+    }
+    .team{
+        margin-top: -200px;
+        padding-bottom: 20px;
+    }
+    .cardContainer{
+
+        padding-left: 17px;
+    }
+  }
